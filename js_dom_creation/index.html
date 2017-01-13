@@ -42,6 +42,12 @@
         $(document).ready(function () {
             //playground 1 code
 
+            var p1_heading = $("<h1>").text("I am a heading");
+            var p1_paragraph1 = $("<p>").text("This is an awesome paragraph");
+            var p1_paragraph2 = $("<p>").text("This has red text").css("color", "red");
+
+            $("#playground1").append(p1_heading, p1_paragraph1, p1_paragraph2);
+
             //playground 2 code
 
             //playground 3 code
