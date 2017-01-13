@@ -50,8 +50,25 @@
 
             //playground 2 code
 
+            var p2_div1 = $("<div>", {
+                addClass:"awesome_class",
+                text:"Here is some awesome div text"
+            });
+            var p2_div2 = $("<div>", {
+                addClass:"awesome_class",
+                text:"Here is MORE awesome div text"
+            });
+            var p2_div3 = $("<div>", {
+                addClass:"awesome_class",
+                html:"Here is <strong>EVEN MORE</strong> awesome div text",
+                // I don't know how to add a data-coolness attribute with jquery, but I think awesome_class adds plenty of cool all by itself.
+            });
+
+            $("#playground2").append(p2_div1, p2_div2, p2_div3);
+
             //playground 3 code
-        });
+
+
     </script>
 </head>
 <body>
