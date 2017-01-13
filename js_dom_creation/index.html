@@ -68,6 +68,21 @@
 
             //playground 3 code
 
+            var p3_nav = $("<ul>").addClass("neato");
+            var p3_fig = $("<figure>").addClass("awesome_picture");
+            var p3_figcap = $("<figcaption>").text("That's right, ");
+            var p3_figcap_bold = $("<span>").addClass("bold_text").text("you are");     //This span has the .bold_text class in the html, but the class isn't ever actually used for anything.
+            var p3_img = $("<img src='http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg'>");
+
+            for (var i=1; i<4; i++){
+                var p3_li = $("<li>").text("Link " + i);
+                p3_li.appendTo(p3_nav);
+            }
+
+            p3_figcap.append(p3_figcap_bold);
+            p3_fig.append(p3_img,p3_figcap);
+            $("#playground3").append(p3_nav, p3_fig);
+        });
 
     </script>
 </head>
