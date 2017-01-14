@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js loops</title>
+    <script>
+
+        //feature set 1
+
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        for (var i = 0; i <numbers.length; i++){
+            console.log("numbers array's values in ascending place in index: ", numbers[i]);
+        }
+
+        for (var i = numbers.length; i > 0; i--){
+            console.log("numbers array's values in descending place in index: ", numbers[i-1]);      //numbers array index goes from 0 to 9, but numbers.length starts counting at 1, so I need to subtract 1 from numbers.length to actually get the right place in the index. is this the right way to do it?
+        }
+
+        for (var i = 0; i < numbers.length; i++){
+            if (numbers[i]%2 != 0){     //modulus to check if there's a remainder when dividing by 2
+                console.log("numbers array's odd values in ascending place in index: ", numbers[i]);
+            }
+        }
+
+        var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];
+
+        for (var i = 0; i < mixedArray.length; i++){
+            if (mixedArray[i]%2 != 0){     //modulus to check if there's a remainder when dividing by 2
+                console.log("mixedArray array's odd values in ascending place in index: ", mixedArray[i]);
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
