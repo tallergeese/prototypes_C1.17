@@ -45,27 +45,32 @@
 
         function findStudent(studentName){
             var studentIndex = 0;   //initialize index variable at the start of the function, so that it resets to 0 each time the function is called
+            var studentString = "";
             while (studentIndex < studentArray.length){     //check that we're still inside the array
                 if (studentArray[studentIndex].name ==  studentName) {      //check to see if the current value of the array is equal to our student query
-                    console.log("Found ", studentArray[studentIndex].name, " their grade is " + studentArray[studentIndex].grade);
+                    studentString = "Found " + studentArray[studentIndex].name + " their grade is " + studentArray[studentIndex].grade;
                     break;  //if we've found the student, then there's no need to continue iterating through the array
                 }
                 else{
                     studentIndex++;     //get to the next value in the array if we haven't found our student yet
                 }
             }
+
             if (studentIndex >= studentArray.length){       //if studentIndex is equal to the studentArray.length, then we never met the condition that studentArray[studentIndex].name == studentName, since studentIndex is only incremented if that condition is not met. Even if studentName is the last value in the array, the studentIndex will be studentArray.length - 1. The > probably isn't necessary, but is included in case something went really really wrong...
-                console.log ("Student " + studentName + " not found.");
+                studentString = "Student " + studentName + " not found.";
             }
+
+            return studentString;
         }
 
-        //there was probably a much cleaner way to do this... I didn't end up using any variable to track whether the student has been found yet like the hint in the prototype instructions. I also didn't make any variable to contain the final output string, which I guess would have made things more readable than seeing studentArray[studentIndex].name/grade everywhere?
+        // testing findStudent()
+        console.log("Test 1: ",findStudent("George"));
+        console.log("Test 1: ",findStudent("Fred"));
+        console.log("Test 1: ",findStudent("Hank"));
+        console.log("Test 1: ",findStudent("Bob"));
+        console.log("Test 1: ",findStudent("Robert"));
 
-
-        findStudent("George");
-        findStudent("Fred");
-        findStudent("Hank");
-
+        //if I try to use findStudent() via the console, I get the right output, but it also throws up an undefined line. Not sure what's happening there.
     </script>
 </head>
 <body>
