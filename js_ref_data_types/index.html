@@ -13,8 +13,33 @@
         console.log(student_array.length);
         console.log(student_array);
 
+        var student = {};
 
+        student.firstName = 'Michael';
+        student.lastName = 'Duong';
+        student.age = 26;
+        student.school = 'LearningFuze';
+        student.questionList = [];
+        student.hasQuestion = false;
 
+        student.greeting = function() {
+            return "Hello, my name is " + student.firstName;
+        }
+        student.aboutMe = function(){
+            return "My full name is " + student.firstName + " " + student.lastName + ", I am " + student.age + " years old and I am a student at " + student.school + ".";
+        }
+        student.askQuestion = function(question){
+            student.questionList.push(question);
+            student.hasQuestion = true;
+            return "A question has been added to your list";
+        }
+        student.answerQuestion = function() {
+            if (student.hasQuestion == true) {
+                student.hasQuestion = false;
+                return student.questionList[student.questionList.length-1];
+            }
+            return "You have no pending questions"
+        }
 
     </script>
 </head>
