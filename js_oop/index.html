@@ -8,9 +8,29 @@
         //FEATURE SET 1
         var coinStack = function(startingCoins) {
             this.value = startingCoins;
+            this.addCoins = function(newCoins){
+                this.value = this.value + newCoins;
+            };
+            this.removeCoins = function(lostCoins){
+                if (this.value >= lostCoins){
+                    this.value = this.value - lostCoins;
+                    return lostCoins;
+                }
+                else {
+                    lostCoins = lostCoins - this.value;
+                    this.value = 0;
+                    return lostCoins;
+                }
+            }
         };
         var myCoinStack = new coinStack(50);
         console.log('myCoinStack contains ' + myCoinStack.value + ' coins');
+        myCoinStack.addCoins(15);
+        console.log('I have '+ myCoinStack.value +' coins in my coin stack.');
+        myCoinStack.removeCoins(37);
+        console.log('I have '+ myCoinStack.value +' coins in my coin stack.');
+        myCoinStack.removeCoins(55);
+        console.log('I have '+ myCoinStack.value +' coins in my coin stack.')
 
     </script>
 </head>
