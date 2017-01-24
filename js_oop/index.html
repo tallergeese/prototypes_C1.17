@@ -14,13 +14,12 @@
             this.removeCoins = function(lostCoins){
                 if (this.value >= lostCoins){
                     this.value = this.value - lostCoins;
-                    return lostCoins;
                 }
                 else {
-                    lostCoins = lostCoins - this.value;
+                    lostCoins = this.value;
                     this.value = 0;
-                    return lostCoins;
                 }
+                return lostCoins;
             }
         };
         var myCoinStack = new coinStack(50);
@@ -30,8 +29,29 @@
         myCoinStack.removeCoins(37);
         console.log('I have '+ myCoinStack.value +' coins in my coin stack.');
         myCoinStack.removeCoins(55);
-        console.log('I have '+ myCoinStack.value +' coins in my coin stack.')
+        console.log('I have '+ myCoinStack.value +' coins in my coin stack.');
 
+        //FEATURE SET 3
+
+        coinStack.prototype.transferCoins = function (transferFrom, transferAmount) {
+            this.addCoins(transferFrom.removeCoins(transferAmount));
+        }
+
+        var ericsCoins = new coinStack(50);
+        var dansCoins = new coinStack(50);
+
+        console.log('Eric has '+ericsCoins.value+' coins.');
+        console.log('Dan has '+dansCoins.value+' coins.');
+
+        dansCoins.transferCoins(ericsCoins,30);
+
+        console.log('After the transfer, Eric has '+ericsCoins.value+' coins.');
+        console.log('After the transfer, Dan has '+dansCoins.value+' coins.');
+
+        dansCoins.transferCoins(ericsCoins,120);
+
+        console.log('After the transfer, Eric has '+ericsCoins.value+' coins.');
+        console.log('After the transfer, Dan has '+dansCoins.value+' coins.');
     </script>
 </head>
 <body>
