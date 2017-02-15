@@ -77,7 +77,7 @@ var student = new studentClass('Skippy');
 console.log(student);
 
 //EXERCISE 10
-var $num_array = [-35, -2, -14, -56, -65, -52];
+var $num_array = [35, 2, 14, 56, 65, 52];
 
 function find_greatest_number_and_index(direction){
 
