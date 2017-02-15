@@ -92,7 +92,7 @@ function find_greatest_number_and_index(direction){
         endLoop = $num_array.length;
         incrementer = 1;
     }else{
-        i = $num_array.length;
+        i = $num_array.length-1;
         endLoop = 0;
         incrementer = -1;
     }
