@@ -83,6 +83,8 @@ $student->grade = 75;
 
 //EXERCISE 10
 
+$num_array = [-35, -2, -14, -56, -65, -52];
+
 function find_greatest_num_and_index($direction)
 {
     global $num_array;
@@ -116,7 +118,7 @@ function find_greatest_num_and_index($direction)
     ];
 }
 
-find_greatest_num_and_index(1);
+print_r(find_greatest_num_and_index(1));
 
 ?>
 </body>

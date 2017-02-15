@@ -77,12 +77,12 @@ var student = new studentClass('Skippy');
 console.log(student);
 
 //EXERCISE 10
-var $num_array = [35, 2, 14, 56, 65, 52];
+var $num_array = [-35, -2, -14, -56, -65, -52];
 
 function find_greatest_number_and_index(direction){
 
-    var $greatest = null;
-    var $greatest_index = null;
+    var $greatest = $num_array[0];
+    var $greatest_index = 0;
     var i = null;
     var endLoop = null;
     var incrementer = null;
@@ -103,8 +103,7 @@ function find_greatest_number_and_index(direction){
         }
         i = i + incrementer;
     }
-    console.log('the greatest number is ' + $greatest + ' and the greatest index is ' + $greatest_index);
     return 'the greatest number is ' + $greatest + ' and the greatest index is ' + $greatest_index;
 }
 
-find_greatest_number_and_index(1);
+console.log(find_greatest_number_and_index(1));
