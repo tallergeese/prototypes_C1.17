@@ -81,6 +81,8 @@ $student->name = 'Skippy';
 $student->class = 'English';
 $student->grade = 75;
 
+print_r($student);
+
 //EXERCISE 10
 
 $num_array = [35, 2, 14, 56, 65, 52];

@@ -67,13 +67,15 @@ var $student = {
 
 //EXERCISE 9
 
-function studentClass(name){
+var student1 ={};
+
+function studentObj(name){
     this.name = name;
     this.class = 'English';
     this.grade = 75;
 }
 
-var student = new studentClass('Skippy');
+var student = new studentObj('Skippy');
 console.log(student);
 
 //EXERCISE 10
