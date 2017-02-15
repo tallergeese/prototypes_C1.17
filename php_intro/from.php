@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="to.js"></script>
+</head>
+<body>
 <?php
 //EXERCISE 1
 
@@ -32,6 +38,9 @@ $my_float = 3.5;
 $my_int = (int)$my_float;
 $my_float2 = 5.3;
 $my_int2 = intval($my_float2);
+
+print("my_float {$my_float2}");
+print("my_int {$my_int2}");
 
 //EXERCISE 6
 
@@ -74,8 +83,6 @@ $student->grade = 75;
 
 //EXERCISE 10
 
-$num_array = [35, 2, 14, 56, 65, 52];
-
 function find_greatest_num_and_index($direction)
 {
     global $num_array;
@@ -112,3 +119,5 @@ function find_greatest_num_and_index($direction)
 find_greatest_num_and_index(1);
 
 ?>
+</body>
+</html>
