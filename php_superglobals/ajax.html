@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Superglobals Feature Set 3</title>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('button').click(sendForm);
+        });
+        function sendForm(){
+            event.preventDefault();
+            console.log('sendForm was called');
+            $.ajax({
+                url: 'index.php',
+                method: 'post',
+                dataType: 'text',
+                data: {
+                    howdy: $('input').val(),
+                    greeting_text: $('#greeting_text').val()
+                },
+                success: function(response){
+                    console.log('success!', response);
+                },
+                error: function(response){
+                    console.log('failure', response);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<form>
+    <input type="checkbox" value="howdy" name="greeting" id="checkbox"><label for="checkbox">Howdy</label>
+    <textarea name="greeting_text" id="greeting_text" cols="30" rows=""></textarea>
+    <button>Send Form</button>
+</form>
+</body>
+</html>
