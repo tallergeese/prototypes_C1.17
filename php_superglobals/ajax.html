@@ -19,7 +19,7 @@
                 method: 'post',
                 dataType: 'text',
                 data: {
-                    howdy: $('input').val(),
+                    howdy: $('input:checked').val(),
                     greeting_text: $('#greeting_text').val()
                 },
                 success: function(response){
