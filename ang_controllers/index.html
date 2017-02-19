@@ -4,9 +4,56 @@
     <meta charset="UTF-8">
     <title>Angular Controllers</title>
     <!-- Add the AngularJS CDN below -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
 </head>
-<body>
+<body ng-app="prototype">
+<div ng-controller="formController as fc">
+    <input type="text" placeholder="First Name" ng-model="fc.form.fName"><br>
+    <input type="text" placeholder="Last Name" ng-model="fc.form.lName"><br>
+    <input type="text" placeholder="Email" ng-model="fc.form.email"><br>
+    <textarea cols="30" rows="10" placeholder="Comments" ng-model="fc.form.comments" ng-disabled="fc.checkCommentLength()"></textarea>
+    <p>You have {{fc.maxComment - fc.form.comments.length}} characters left.</p>
+    <button ng-click="fc.addInfo()">Submit</button>
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Comments</th>
+        </tr>
+        <tr ng-repeat="person in fc.formArray">
+            <td>{{person.fName + ' ' + person.lName}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.comments}}</td>
+        </tr>
+    </table>
+</div>
 
+
+<script>
+    var app = angular.module('prototype', []);
+    app.controller("formController", function(){
+        this.form={};
+        this.formArray=[];
+        this.maxComment=20;
+
+        this.addInfo = function(){
+            this.formArray.push(this.form);
+            console.log(this.formArray);
+            this.clearForm();
+        };
+
+        this.clearForm = function(){
+            this.form={};
+        };
+
+        this.checkCommentLength = function(){
+            if (this.form.comments == undefined){
+                return false;
+            }
+            return this.maxComment - this.form.comments.length <= 0;
+        };
+    });
+</script>
 </body>
 </html>
