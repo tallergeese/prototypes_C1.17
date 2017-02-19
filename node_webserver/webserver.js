@@ -10,11 +10,13 @@ server.listen(port, function(){
 
 function requestHandler(request, response){
     console.log('handling request');
-    fs.readFile('index.html', function(err, data){
+    var directory = request.url.slice(1);
+    fs.readFile(directory, function(err, data){
         if (err){
-            response.writeHead(404);
-            response.end(JSON.stringify(err));
-            return;
+            fs.readFile('404.html', function(err,data){
+                response.writeHead(404);
+                response.end(data);
+            });
         }
         else{
             response.writeHead(200);
