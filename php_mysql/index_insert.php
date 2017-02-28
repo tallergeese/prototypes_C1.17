@@ -4,7 +4,7 @@ require ('mysql_connect.php');
 
 print_r($_POST);
 
-$query = "INSERT INTO `c117db`.`students` (`id`, `name`, `email`, `age`, `ssn`, `username`, `password`, `joined`, `status`) VALUES (NULL, '{$_POST['name']}', '{$_POST['email']}', '{$_POST['age']}', '{$_POST['ssn']}', '{$_POST['username']}', SHA1('{$_POST['password']}'), NOW(), 'activec')";
+$query = "INSERT INTO `c117db`.`students` (`id`, `name`, `email`, `age`, `ssn`, `username`, `password`, `joined`, `status`) VALUES (NULL, '{$_POST['name']}', '{$_POST['email']}', '{$_POST['age']}', '{$_POST['ssn']}', '{$_POST['username']}', SHA1('{$_POST['password']}'), NOW(), 'active')";
 
 print($query);
 
