@@ -2,8 +2,31 @@
 <html>
 <head>
 	<title></title>
+	<script
+			src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"></script>
+	<script>
+		function getData(){
+		  $.ajax({
+		    url: "/api",
+			dataType: "json",
+			method: "get",
+			success: function(res){
+		      console.log('ajax successs', res);
+		      var div = $("<div>").text(JSON.stringify(res));
+			  $("body").append(div);
+			},
+			error: function(err){
+			  console.log('ajax err', err);
+			}
+		  })
+		}
+	</script>
 </head>
 <body>
+
+<button onclick="getData()">Hello</button>
 <!-- 
 create your ajax request to getData.js.  Remember it is on your node server, so make sure the request is going to the appropriate port.  Then present the json data into your page 
 -->
