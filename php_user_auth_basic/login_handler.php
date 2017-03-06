@@ -1,4 +1,3 @@
-<!--login_handler.php-->
 <?php
 $user_info = [
     ['id'=> 0, 'username'=>'dpaschal', 'password' => '2beb0192eb1ca5a8756bc89a09b93036e1854049'],
@@ -27,7 +26,7 @@ if (isset($output["user_id"])){
 }
 else{
   $output["success"] = "false";
-  $output["status"] = "Login Failed";
+  $output["message"] = "Login Failed";
 }
 $output_string = json_encode($output);
 header('Content-Type: application/json');
