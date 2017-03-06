@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>js_regex</title>
+  <script>
+    var fs1a = /e/;
+    var fs1b = /e/gi;
+    var fs1c = /st[ai]r/g;
+    var testString1 = "stir the star";
+    var testString2 = "stim the stat";
+    var testString3 = "stir the stat";
+    var testString4 = "stim the star";
+    var testString5 = "eavesdrop";
+
+    console.log(testString5.match(fs1b));
+    console.log(testString1.match(fs1c));
+    console.log(testString2.match(fs1c));
+    console.log(testString3.match(fs1c));
+    console.log(testString4.match(fs1c));
+
+    var phoneNumber = /[1]?[-]?[ ]?[\(]?[0-9]{3}[\)]?[ ]*[-]?[0-9]{3}[ ]*[-]?[0-9]{4}/;
+
+    var passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])[a-zA-Z]+[a-zA-Z0-9]{5,31}$/g;
+  </script>
+</head>
+<body>
+  <h1>JavaScript - Regular Expressions</h1>
+</body>
+</html>
